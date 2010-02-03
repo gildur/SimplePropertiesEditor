@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SimplePropertiesEditor
+Bundle-SymbolicName: SimplePropertiesEditor; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: org.gildur.simplepropertieseditor.Activator
+Bundle-Vendor: Piotr Wolny
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

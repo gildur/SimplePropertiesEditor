@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="SimplePropertiesEditor"
+            extensions="properties"
+            icon="icons/icon.gif"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="org.gildur.simplepropertieseditor.editor.SimplePropertiesEditor"
+            id="org.gildur.simplepropertieseditor.editor.SimplePropertiesEditor">
+      </editor>
+   </extension>
+
+</plugin>
