@@ -108,11 +108,11 @@ public class PropertiesDocumentWrapper implements IDocument {
     public String get() {
         String content = document.get();
         StringBuffer buffer = new StringBuffer();
-        Charset latinCharset = Charset.forName("ISO-8859-1");
-        ByteBuffer encodedUnknown = latinCharset.encode("?");
+        Charset asciiCharset = Charset.forName("US-ASCII");
+        ByteBuffer encodedUnknown = asciiCharset.encode("?");
         for (int i = 0; i < content.length(); i++) {
             char c = content.charAt(i);
-            if (latinCharset.encode(String.valueOf(c)).equals(encodedUnknown)) {
+            if (asciiCharset.encode(String.valueOf(c)).equals(encodedUnknown)) {
                 buffer.append(String.format("\\u%04x", (int) c));
             } else {
                 buffer.append(c);
