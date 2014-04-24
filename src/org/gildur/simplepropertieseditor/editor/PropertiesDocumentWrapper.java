@@ -113,7 +113,7 @@ public class PropertiesDocumentWrapper implements IDocument {
         for (int i = 0; i < content.length(); i++) {
             char c = content.charAt(i);
             if (asciiCharset.encode(String.valueOf(c)).equals(encodedUnknown)) {
-                buffer.append(String.format("\\u%04x", (int) c));
+                buffer.append(String.format("\\u%04X", (int) c));
             } else {
                 buffer.append(c);
             }
