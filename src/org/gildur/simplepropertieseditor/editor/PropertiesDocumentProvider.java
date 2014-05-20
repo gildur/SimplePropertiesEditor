@@ -46,13 +46,10 @@ public class PropertiesDocumentProvider extends FileDocumentProvider {
         StringBuffer buffer = new StringBuffer();
         for (int i = 0; i < content.length(); i++) {
             char c = content.charAt(i);
-            if (c == '\\') {
-                c = content.charAt(i + 1);
-                if (c == 'u') {
-                    int code = Integer.parseInt(content.substring(i + 2, i + 6), 16);
-                    buffer.append((char) code);
-                    i += 5;
-                }
+            if (c == '\\' && i < content.length() - 1 && content.charAt(i + 1) == 'u') {
+                int code = Integer.parseInt(content.substring(i + 2, i + 6), 16);
+                buffer.append((char) code);
+                i += 5;
             } else {
                 buffer.append(c);
             }
