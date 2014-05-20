@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SimplePropertiesEditor
 Bundle-SymbolicName: SimplePropertiesEditor; singleton:=true
-Bundle-Version: 1.0.3
+Bundle-Version: 1.0.4
 Bundle-Activator: org.gildur.simplepropertieseditor.Activator
 Bundle-Vendor: Piotr Wolny
 Require-Bundle: org.eclipse.core.runtime,
