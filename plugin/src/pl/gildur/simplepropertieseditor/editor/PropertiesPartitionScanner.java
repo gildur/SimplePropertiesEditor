@@ -20,24 +20,28 @@
 // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
-package org.gildur.simplepropertieseditor.editor;
+package pl.gildur.simplepropertieseditor.editor;
 
-import org.eclipse.ui.editors.text.TextEditor;
+import org.eclipse.jface.text.rules.*;
 
-public class SimplePropertiesEditor extends TextEditor {
+public class PropertiesPartitionScanner extends RuleBasedPartitionScanner {
 
-    private ColorManager colorManager;
+    public final static String PROPERTIES_COMMENT = "__properties_comment";
 
-    public SimplePropertiesEditor() {
-        super();
-        colorManager = new ColorManager();
-        setSourceViewerConfiguration(new PropertiesConfiguration(colorManager));
-        setDocumentProvider(new PropertiesDocumentProvider());
-    }
+    public final static String PROPERTIES_ENTRY = "__properties_entry";
 
-    @Override
-    public void dispose() {
-        colorManager.dispose();
-        super.dispose();
+    public PropertiesPartitionScanner() {
+
+        IToken comment = new Token(PROPERTIES_COMMENT);
+        IToken entry = new Token(PROPERTIES_ENTRY);
+
+        IPredicateRule[] rules = new IPredicateRule[2];
+
+        SingleLineRule commentRule = new SingleLineRule("#", null, comment, (char) 0, true);
+        commentRule.setColumnConstraint(0);
+        rules[0] = commentRule;
+        rules[1] = new SingleLineRule("=", null, entry, (char) 0, true);
+
+        setPredicateRules(rules);
     }
 }

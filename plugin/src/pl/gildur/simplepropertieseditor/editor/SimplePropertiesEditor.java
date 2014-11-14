@@ -20,15 +20,24 @@
 // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
-package org.gildur.simplepropertieseditor.editor;
+package pl.gildur.simplepropertieseditor.editor;
 
-import org.eclipse.swt.graphics.RGB;
+import org.eclipse.ui.editors.text.TextEditor;
 
-public interface PropertiesColorConstants {
+public class SimplePropertiesEditor extends TextEditor {
 
-    RGB DEFAULT = new RGB(0, 0, 0);
+    private ColorManager colorManager;
 
-    RGB COMMENT = new RGB(0, 255, 0);
+    public SimplePropertiesEditor() {
+        super();
+        colorManager = new ColorManager();
+        setSourceViewerConfiguration(new PropertiesConfiguration(colorManager));
+        setDocumentProvider(new PropertiesDocumentProvider());
+    }
 
-    RGB ENTRY = new RGB(0, 0, 255);
+    @Override
+    public void dispose() {
+        colorManager.dispose();
+        super.dispose();
+    }
 }

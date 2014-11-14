@@ -20,28 +20,31 @@
 // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
-package org.gildur.simplepropertieseditor.editor;
+package pl.gildur.simplepropertieseditor.editor;
 
-import org.eclipse.jface.text.rules.*;
+import java.util.HashMap;
+import java.util.Map;
 
-public class PropertiesPartitionScanner extends RuleBasedPartitionScanner {
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.RGB;
+import org.eclipse.swt.widgets.Display;
 
-    public final static String PROPERTIES_COMMENT = "__properties_comment";
+public class ColorManager {
 
-    public final static String PROPERTIES_ENTRY = "__properties_entry";
+    protected Map<RGB, Color> colorTable = new HashMap<RGB, Color>(10);
 
-    public PropertiesPartitionScanner() {
+    public void dispose() {
+        for (Color c : colorTable.values()) {
+            c.dispose();
+        }
+    }
 
-        IToken comment = new Token(PROPERTIES_COMMENT);
-        IToken entry = new Token(PROPERTIES_ENTRY);
-
-        IPredicateRule[] rules = new IPredicateRule[2];
-
-        SingleLineRule commentRule = new SingleLineRule("#", null, comment, (char) 0, true);
-        commentRule.setColumnConstraint(0);
-        rules[0] = commentRule;
-        rules[1] = new SingleLineRule("=", null, entry, (char) 0, true);
-
-        setPredicateRules(rules);
+    public Color getColor(RGB rgb) {
+        Color color = colorTable.get(rgb);
+        if (color == null) {
+            color = new Color(Display.getCurrent(), rgb);
+            colorTable.put(rgb, color);
+        }
+        return color;
     }
 }

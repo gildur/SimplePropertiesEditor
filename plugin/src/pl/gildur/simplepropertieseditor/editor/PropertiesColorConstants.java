@@ -20,31 +20,15 @@
 // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
-package org.gildur.simplepropertieseditor.editor;
+package pl.gildur.simplepropertieseditor.editor;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
-import org.eclipse.swt.widgets.Display;
 
-public class ColorManager {
+public interface PropertiesColorConstants {
 
-    protected Map<RGB, Color> colorTable = new HashMap<RGB, Color>(10);
+    RGB DEFAULT = new RGB(0, 0, 0);
 
-    public void dispose() {
-        for (Color c : colorTable.values()) {
-            c.dispose();
-        }
-    }
+    RGB COMMENT = new RGB(0, 255, 0);
 
-    public Color getColor(RGB rgb) {
-        Color color = colorTable.get(rgb);
-        if (color == null) {
-            color = new Color(Display.getCurrent(), rgb);
-            colorTable.put(rgb, color);
-        }
-        return color;
-    }
+    RGB ENTRY = new RGB(0, 0, 255);
 }
