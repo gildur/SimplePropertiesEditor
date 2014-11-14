@@ -6,5 +6,5 @@ Eclipse plug-in for editing Java properties files, automatically converts non-AS
 Installation
 ------------
 
-Click "Help -> Install new software" and paste update site URL:
+Click "Help -> Install new software" and paste update site URL:<br>
 http://gildur.github.io/SimplePropertiesEditor/updates/
