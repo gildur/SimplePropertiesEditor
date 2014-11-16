@@ -9,8 +9,8 @@
             extensions="properties"
             icon="icons/icon.gif"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            class="org.gildur.simplepropertieseditor.editor.SimplePropertiesEditor"
-            id="org.gildur.simplepropertieseditor.editor.SimplePropertiesEditor">
+            class="pl.gildur.simplepropertieseditor.editor.SimplePropertiesEditor"
+            id="pl.gildur.simplepropertieseditor.editor.SimplePropertiesEditor">
       </editor>
    </extension>
 
