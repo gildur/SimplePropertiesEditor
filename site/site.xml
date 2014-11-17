@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description name="SimplePropertiesEditor" url="http://gildur.github.io/SimplePropertiesEditor/updates">
+   <description name="Simple Properties Editor" url="http://gildur.github.io/SimplePropertiesEditor/updates">
       Eclipse plug-in for editing Java properties files, automatically converts non-ASCII characters to unicode escape sequences.
    </description>
    <feature url="features/pl.gildur.simplepropertieseditor.feature_1.0.5.jar" id="pl.gildur.simplepropertieseditor.feature" version="1.0.5"/>

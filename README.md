@@ -1,5 +1,5 @@
-SimplePropertiesEditor
-======================
+Simple Properties Editor
+========================
 
 Eclipse plug-in for editing Java properties files, automatically converts non-ASCII characters to unicode escape sequences.
 

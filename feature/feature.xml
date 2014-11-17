@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="pl.gildur.simplepropertieseditor.feature"
-      label="SimplePropertiesEditor"
+      label="Simple Properties Editor"
       version="1.0.5"
       provider-name="Piotr Wolny">
 
    <description url="https://github.com/gildur/SimplePropertiesEditor">
-      Eclipse plug-in for editing Java properties files, automatically
-converts non-ASCII characters to unicode escape sequences.
+      Eclipse plug-in for editing Java properties files, automatically converts non-ASCII characters to unicode escape sequences.
    </description>
 
    <copyright>
-      Copyright (c) 2010 Piotr Wolny
+      Copyright (c) 2010-2014 Piotr Wolny
    </copyright>
 
    <license url="">
@@ -38,7 +37,7 @@ OTHER DEALINGS IN THE SOFTWARE.
    </license>
 
    <url>
-      <update label="SimplePropertiesEditor" url="http://gildur.github.io/SimplePropertiesEditor/updates"/>
+      <update label="Simple Properties Editor" url="http://gildur.github.io/SimplePropertiesEditor/updates"/>
    </url>
 
    <plugin

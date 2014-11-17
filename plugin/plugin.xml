@@ -5,7 +5,7 @@
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            name="SimplePropertiesEditor"
+            name="Simple Properties Editor"
             extensions="properties"
             icon="icons/icon.gif"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: SimplePropertiesEditor
+Bundle-Name: Simple Properties Editor
 Bundle-SymbolicName: pl.gildur.simplepropertieseditor;singleton:=true
 Bundle-Version: 1.0.5
 Bundle-Activator: pl.gildur.simplepropertieseditor.Activator
